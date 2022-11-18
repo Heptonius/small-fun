@@ -42,6 +42,11 @@ legend {
   font-weight: bold;
 }
 
+.heading-span {
+  display: flex;
+  justify-content: space-between;
+}
+
 .caesars-cipher {
   display: flex;
   gap: 1rem;
