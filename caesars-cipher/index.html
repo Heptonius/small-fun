@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="caesars-cipher">
+      <h2>Caesar cipher</h2>
+      <form id="decode-form" class="decode">
+        <legend>Decode</legend>
+        <span>
+          <label for="decode-text">Text to decode</label>
+          <textarea
+            form="decode-form"
+            type="text"
+            id="decode-input"
+            name="decode-text"
+            placeholder="Enter the text to decode here..."
+            rows="4"
+          ></textarea>
+          <button type="submit" id="decode-button">Decode</button>
+        </span>
+        <span>
+          <label for="decoded-text">Decoded text</label>
+          <textarea
+            id="decoded-text"
+            placeholder="The decoded text will appear here..."
+            readonly
+            rows="4"
+          ></textarea>
+        </span>
+      </form>
+      <form id="encode-form" class="encode">
+        <legend>Encode</legend>
+        <span>
+          <label for="encode-text">Text to encode</label>
+          <textarea
+            form="encode-form"
+            type="text"
+            id="encode-input"
+            name="encode-text"
+            placeholder="Enter the text to encode here..."
+            rows="4"
+          ></textarea>
+          <button type="submit" id="encode-button">Encode</button>
+        </span>
+        <span>
+          <label for="encoded-text">Encoded text</label>
+          <textarea
+            id="encoded-text"
+            placeholder="The encoded text will appear here..."
+            readonly
+            rows="4"
+          ></textarea>
+        </span>
+      </form>
+    </div>
+  </body>
+</html>
