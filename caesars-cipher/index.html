@@ -15,8 +15,21 @@
         <a href="../index.html"><button>Go back 🔙</button></a>
       </span>
       <form id="decode-form" class="decode">
-        <legend>Decode</legend>
-        <span>
+        <span class="decode-form-header-span">
+          <legend>Decode</legend>
+          <span>
+            <label for="decode-alphabet-shift">Alphabet shift</label>
+            <input
+              id="decode-alphabet-shift"
+              name="decode-alphabet-shift"
+              type="number"
+              min="-26"
+              max="26"
+              value="0"
+            />
+          </span>
+        </span>
+        <span class="decode-span">
           <label for="decode-text">Text to decode</label>
           <textarea
             form="decode-form"
@@ -28,7 +41,7 @@
           ></textarea>
           <button type="submit" id="decode-button">Decode</button>
         </span>
-        <span>
+        <span class="decode-span">
           <label for="decoded-text">Decoded text</label>
           <textarea
             id="decoded-text"
@@ -39,8 +52,21 @@
         </span>
       </form>
       <form id="encode-form" class="encode">
-        <legend>Encode</legend>
-        <span>
+        <span class="encode-form-header-span">
+          <legend>Encode</legend>
+          <span>
+            <label for="encode-alphabet-shift">Alphabet shift</label>
+            <input
+              id="encode-alphabet-shift"
+              name="encode-alphabet-shift"
+              type="number"
+              min="-26"
+              max="26"
+              value="0"
+            />
+          </span>
+        </span>
+        <span class="encode-span">
           <label for="encode-text">Text to encode</label>
           <textarea
             form="encode-form"
@@ -52,7 +78,7 @@
           ></textarea>
           <button type="submit" id="encode-button">Encode</button>
         </span>
-        <span>
+        <span class="encode-span">
           <label for="encoded-text">Encoded text</label>
           <textarea
             id="encoded-text"

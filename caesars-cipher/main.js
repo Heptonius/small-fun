@@ -1,5 +1,6 @@
 const decodeForm = document.getElementById("decode-form");
 const decodedTextOutput = document.getElementById("decoded-text");
+const decodeAlphabetShiftInput = document.getElementById("decode-alphabet-shift");
 
 //charCodes for "A" - 65 "Z" - 90, for "a" - 97, "z" - 122
 
@@ -53,8 +54,10 @@ const decodeCaesarsCipher = (encodedText, alphabetShift = 0) => {
 decodeForm.onsubmit = (formEvent) => {
   formEvent.preventDefault();
   const textToDecode = formEvent.srcElement.querySelector("#decode-input").value;
+  const alphabetShift =
+    Number(formEvent.srcElement.querySelector("#decode-alphabet-shift").value) || 0;
 
-  const decodedText = decodeCaesarsCipher(textToDecode, 3);
+  const decodedText = decodeCaesarsCipher(textToDecode, alphabetShift);
   decodedTextOutput.textContent = decodedText || "";
 };
 
@@ -62,8 +65,9 @@ decodeForm.onsubmit = (formEvent) => {
 
 const encodeForm = document.getElementById("encode-form");
 const encodedTextOutput = document.getElementById("encoded-text");
+const encodeAlphabetShiftInput = document.getElementById("encode-alphabet-shift");
 
-const encodeCaesarsCipher = (textToEncode, alphabetShift = 0) => {
+const encodeToCaesarsCipher = (textToEncode, alphabetShift = 0) => {
   const decodedText = textToEncode
     .split("")
     .map((charToEncode) => {
@@ -100,7 +104,10 @@ const encodeCaesarsCipher = (textToEncode, alphabetShift = 0) => {
 encodeForm.onsubmit = (formEvent) => {
   formEvent.preventDefault();
   const textToEncode = formEvent.srcElement.querySelector("#encode-input").value;
+  const alphabetShift =
+    Number(formEvent.srcElement.querySelector("#encode-alphabet-shift").value) || 0;
 
-  const encodedText = encodeCaesarsCipher(textToEncode, 3);
+  const encodedText = encodeToCaesarsCipher(textToEncode, alphabetShift);
+
   encodedTextOutput.textContent = encodedText || "";
 };
